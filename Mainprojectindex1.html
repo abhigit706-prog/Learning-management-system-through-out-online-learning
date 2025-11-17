@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Course Landing Page — Abhilash</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Learning</h1>
+        <p class="tagline">Practical courses. Build real skills.</p>
+      </div>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="loginBtn" class="btn btn-outline">Login</button>
+        <a class="btn btn-primary" href="#courses">Browse Courses</a>
+        <button class="hamburger" aria-label="Open menu" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h2>Upskill with curated courses</h2>
+          <p>Interactive lessons, practical projects, and progress tracking to help you land your next role.</p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#courses">Get Started</a>
+            <a class="btn btn-ghost" href="#about">Why Learnify?</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>Top Categories</h3>
+          <ul class="small-list">
+            <li>Web Development</li>
+            <li>Data Science</li>
+            <li>Machine Learning</li>
+            <li>DevOps</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses -->
+    <section id="courses" class="courses-section">
+      <div class="container section-head">
+        <div>
+          <h2>Courses</h2>
+          <p>Explore courses — filter, search, and open details to learn more.</p>
+        </div>
+
+        <div class="controls">
+          <input id="searchInput" type="search" placeholder="Search courses..." aria-label="Search courses" />
+          <select id="categorySelect" aria-label="Filter by category">
+            <option value="all">All categories</option>
+          </select>
+          <select id="sortSelect" aria-label="Sort courses">
+            <option value="featured">Featured</option>
+            <option value="newest">Newest</option>
+            <option value="popular">Most Popular</option>
+            <option value="price-low">Price: Low → High</option>
+            <option value="price-high">Price: High → Low</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="container">
+        <div id="coursesGrid" class="courses-grid" aria-live="polite">
+          <!-- Course cards inserted by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2>About Learnify</h2>
+        <p>Learnify is a demo front-end project that showcases responsive UI patterns for an online learning platform. Built with HTML, CSS, and vanilla JavaScript.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Course Detail Modal -->
+  <div id="courseModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content" role="document">
+      <button class="modal-close" id="closeModal" aria-label="Close">&times;</button>
+      <div id="modalBody">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content small" role="document">
+      <button class="modal-close" id="closeLogin" aria-label="Close">&times;</button>
+      <h3>Login (Demo)</h3>
+      <form id="loginForm" class="login-form" onsubmit="return false;">
+        <label for="email">Email</label>
+        <input id="email" type="email" required placeholder="you@example.com" />
+        <label for="password">Password</label>
+        <input id="password" type="password" required placeholder="password" />
+        <div class="form-actions">
+          <button id="submitLogin" class="btn btn-primary">Login</button>
+          <button id="cancelLogin" class="btn btn-outline">Cancel</button>
+        </div>
+        <p class="small-note">This is a front-end demo — no real authentication.</p>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Learnify — Built by Abhilash</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
